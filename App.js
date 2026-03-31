@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
   },
   btnAdicionar:{
-width: "50%",
+width: "55%",
 backgroundColor: '#ff00ff',
 margin: 15,
 height: 40,
