@@ -1,5 +1,5 @@
 
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 
 
 export default function App() {
@@ -7,6 +7,7 @@ export default function App() {
     {id:"1", titulo: "Aprender git"},
     {id: "2", titulo: "Aprender fazer commit "},
     {id: "3", titulo: "Aprender utilizar o GitHub"},
+    {id: "4", titulo: "realizar um novo commit"},
   ]
   return (
     <View style = {styles.container}>
@@ -22,6 +23,7 @@ export default function App() {
        
       
       />
+      <TouchableOpacity style ={styles.btnAdicionar}><text>Adicionar Tarefa</text></TouchableOpacity>
 
     </View>
   );
@@ -47,5 +49,15 @@ const styles = StyleSheet.create({
     color: 'white'
 
   },
+  btnAdicionar:{
+width: "50%",
+backgroundColor: '#ff00ff',
+margin: 15,
+height: 40,
+borderRadius: 5,
+color: 'white',
+justifyContent: "center",
+alignItems: "center"
+},
 
 });
