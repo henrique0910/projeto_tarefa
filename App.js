@@ -1,5 +1,5 @@
 
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, TextInput,  } from 'react-native';
 import { useState } from 'react';
 
 
@@ -13,13 +13,19 @@ export default function App() {
     {id: "4", titulo: "realizar um novo commit"},
   ])
 
-const [novaTarefa, setnovaTarefa] = useState ('')
+const [task, setTask] = useState ("")
 function addTarefa (){
-  const task = [{
+
+  const novaTarefa = {
     id : String (Date.now()),
-    titulo : novaTarefa
- }]
+    titulo : task
+ };
+
+setTarefas ([...tarefas, novaTarefa])
+setTask("")
+
 }
+
 
    return (
     <View style = {styles.container}>
@@ -37,15 +43,15 @@ function addTarefa (){
       />
       <TextInput 
       style = {styles.input}
-      value= {novaTarefa}
-      onChangeText={ (texto)=> setnovaTarefa(texto) }
-      placeholder='Digite uma tarefa'
-      textAlign='center'
+      value = {task}
+      onChangeText = { (texto)=> setTask(texto) }
+      placeholder = 'Digite uma tarefa'
+      textAlign = 'center'
 
       
       />
     
-      <TouchableOpacity style ={styles.btnAdicionar}><text>Adicionar Tarefa</text></TouchableOpacity>
+      <TouchableOpacity onPress={addTarefa} style ={styles.btnAdicionar}><text>Adicionar Tarefa</text></TouchableOpacity>
 
     </View>
   );
